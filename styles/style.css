@@ -9,8 +9,137 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: 'Inter', sans-serif;
+    font-weight: var(--text-font-weight);
+  }
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  background: var(--background-image) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.decor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--header-padding-tb) var(--header-padding-lr);
+  background-color: #fff;
+  margin-bottom: 98px;
+  margin-top: 100px;
+  width: clamp(350px, 100%, 700px);
+  border: 2px solid #000;
+}
+
+.title_header {
+  font-size: var(--accent-title-font-size);
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+}
+
+.title_descrip {
+  font-size: var(--accent-title-desc-font-size);
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+}
+
+.last_leter {
+  text-transform: lowercase;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.card {
+  border: 2px solid #000;
+  width: clamp(350px, 50%, 700px);
+}
+
+.card_decor {
+  background-color: #fff;
+}
+
+.card_title {
+  
+}
+
+.image_decor {
+  position: relative;
+}
+
+.card_img {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-position: right;
+}
+
+.image_elem {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow:
+  -1px 0 var(--text-stroke), 
+  0 1px var(--text-stroke), 
+  1px 0 var(--text-stroke), 
+  0 -1px var(--text-stroke);
+  mix-blend-mode: hard-light;
+  opacity: 50%;
+  color: #000;
+}
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke)) {
+ .image_elem {
+  -webkit-text-stroke: 1px var(--text-stroke);
+  text-stroke: 1px var(--text-stroke);
+  text-shadow: none;
+  }
+}
+
+.card_text {
+  padding: 25px;
+}
+
+.button_box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 25px 25px 0;
+}
+
+.card_text:last-of-type {
+  padding-top: 0;
+}
+
+button {
+  background-color: transparent;
+  color: #000;
+  font-family: var(--accent-font);
+}
+
+.card__icon-button {
+  border: none;
+}
+
+.button__text {
+  padding: 12.5px 37px;
 }
