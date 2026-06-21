@@ -204,7 +204,6 @@ button:not(.card__icon-button)::before {
   transition: color 0.3s ease;
   font-size: 14px;
   line-height: 90%;
-  
 }
 
 button:not(.card__icon-button):hover::before {
@@ -218,12 +217,14 @@ button:not(.card__icon-button):focus {
 
 button:not(.card__icon-button) svg {
   position: relative;
-  z-index: 10; 
+  z-index: 2; 
   mix-blend-mode: difference; 
+  width: 21px;
+  height: 21px;
 }
 
 button:not(.card__icon-button) svg use {
-  fill: white; 
+  fill: rgb(255, 255, 255); 
 }
 
 .card__icon-button {
