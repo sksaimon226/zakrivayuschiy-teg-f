@@ -40,8 +40,8 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin-bottom: 107px;
-  margin-top: 106px;
+  margin-bottom: 97px;
+  margin-top: 98px;
   border: 2px solid #000;
   padding: var(--header-padding-tb) var(--header-padding-lr);
 }
@@ -50,6 +50,7 @@
   font-size: var(--accent-title-font-size);
   font-family: var(--accent-font);
   text-transform: uppercase;
+  padding-bottom: 20px;
 }
 
 .title_descrip {
@@ -150,7 +151,7 @@
 }
 
 .card_text {
-  padding: 26px;
+  padding: 25px;
   font-size: 18px;
   line-height: 21px;
 }
@@ -248,11 +249,12 @@ outline: none;
   font-size: 14px;
 }
 
-
 .save_button {
   background-color: #fff;
   padding: 20.5px 15px 20.5px 25px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   margin-bottom: 100px;
 }
