@@ -19,7 +19,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   background: var(--background-image) no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -27,11 +27,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-variation-settings: 'wght' var(--main-card-font-weight, 410);
+  font-variation-settings: 'wght' var(--text-font-weight, 410);
 }
 
 .header {
-  width: clamp(350px, 50%, 700px);
+  width: clamp(375px, 50%, 700px);
 }
 
 .decor {
@@ -48,15 +48,16 @@
 
 .title_header {
   font-size: var(--accent-title-font-size);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif, fantasy;
   text-transform: uppercase;
   padding-bottom: 20px;
 }
 
 .title_descrip {
   font-size: var(--accent-title-desc-font-size);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
+  text-wrap: nowrap;
 }
 
 .last_leter {
@@ -68,12 +69,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 42px;
+  gap: 49px;
 }
 
 .card {
   border: 2px solid #000;
-  width: clamp(350px, 50%, 700px);
+  width: clamp(375px, 50%, 700px);
 }
 
 .card_decor {
@@ -83,11 +84,14 @@
 .card_title {
   font-weight: var(--title-font-weight);
   padding: 4px 10px;
-  font-variation-settings: 'wght' var(--card-title-font-weight, 715);
+  font-variation-settings: 'wght' var(--title-font-weight, 715);
+  font-size: 18px;
 }
 
 .image_decor {
   position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .card_img {
@@ -97,31 +101,31 @@
   background-position: right;
 }
 
-.img_eff1 {
+.img_eff_sepia {
   filter: sepia(50%) ;
 }
 
-.img_eff2 {
+.img_eff_gray {
   filter: grayscale(0.5);
 }
 
-.img_eff3 {
+.img_eff_invert {
   filter: invert(0.8);
 }
 
-.img_eff4 {
+.img_eff_opacity {
   filter: opacity(0.7);
 }
 
-.img_eff5 {
+.img_eff_satur {
   filter: saturate(2);
 }
 
-.img_eff6 {
+.img_eff_blur {
   filter: blur(4px);
 }
 
-.img_eff7 {
+.img_eff_mix {
   filter: grayscale(1) blur(3px) contrast(1.2);
 }
 
@@ -133,16 +137,16 @@
   font-size: 14px;
   text-transform: uppercase;
   text-shadow:
-  -1px 0 var(--text-stroke), 
-  0 1px var(--text-stroke), 
-  1px 0 var(--text-stroke), 
-  0 -1px var(--text-stroke);
+  -1px 0 var(--text-stroke),#fff, 
+  0 1px var(--text-stroke),#fff, 
+  1px 0 var(--text-stroke),#fff, 
+  0 -1px var(--text-stroke),#fff;
   mix-blend-mode: hard-light;
   opacity: 50%;
   color: #000;
 }
 
-@supports (-webkit-text-stroke: 1px var(--text-stroke)) {
+@supports ((-webkit-text-stroke: 1px var(--text-stroke)) or (text-stroke:1px var(--text-stroke))) {
  .image_elem {
   -webkit-text-stroke: 1px var(--text-stroke);
   text-stroke: 1px var(--text-stroke);
@@ -160,21 +164,18 @@
   display: flex;
   justify-content: flex-end;
   padding: 0 25px 25px 0;
+  align-items: center;
 }
 
 .card_text:last-of-type {
   padding-top: 0;
 }
 
-.card__icon-button:focus {
-outline: none;
-}
-
 button:not(.card__icon-button) {
   background-color: transparent;
   color: white;
   background: white;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   position: relative;
@@ -213,7 +214,7 @@ button:not(.card__icon-button):hover::before {
 
 button:not(.card__icon-button):focus {
   outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color);  
+  box-shadow: 2px 2px 0 var(--accent-color), rgb(0 0 0);  
 }
 
 button:not(.card__icon-button) svg {
@@ -229,9 +230,11 @@ button:not(.card__icon-button) svg use {
 }
 
 .card__icon-button {
+  max-block-size: 38px;
   border: 2px solid transparent;
+  padding: 0;
   background-color: transparent;
-  box-sizing: border-box;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -239,19 +242,20 @@ outline: none;
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color);
+  border-color: var(--accent-color), rgb(0 0 0);
   transition: border-color 0.3s ease;
+  margin-right: 7px;
 }
 
 .card__like-button {
-  padding: 12.5px 37px;
+  padding: 11px 36px;
   line-height: 90%;
   font-size: 14px;
 }
 
 .save_button {
   background-color: #fff;
-  padding: 20.5px 15px 20.5px 25px;
+  padding: 17px 15px 17px 19px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,19 +263,20 @@ outline: none;
   margin-bottom: 100px;
 }
 
-dialog::backdrop {
+.dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-dialog[open] {
+.dialog[open] {
   display: grid;
   grid-template-columns: min-content 1fr;
   padding: 30px;
+  border: 2px solid #000;
 }
 
 .dialog_text {
   padding-left: 12px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -283,12 +288,20 @@ dialog[open] {
   margin-top: 30px;
 }
 
-@media (width <= 375px) {
+/*При медиазапросе меняется количество текста в разметке, так как по заданию надо было написать свои ощущения в каждой из карточек,  
+подгонка текста под PP невозможна из за того что макет не соответсвует заданию*/
+
+@media (width <= 375px) {  
  .save_button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 17px 20px ;
+ }
+
+ .save_button .disket_save_button {
+  width: 28px;
+  height: 28px;
  }
 }
 
