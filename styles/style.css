@@ -55,7 +55,7 @@
 
 .title_descrip {
   font-size: var(--accent-title-desc-font-size);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), sans-serif, fantasy;
   text-transform: uppercase;
   text-wrap: nowrap;
 }
@@ -133,14 +133,14 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif, fantasy;
   font-size: 14px;
   text-transform: uppercase;
   text-shadow:
-  -1px 0 var(--text-stroke),#fff, 
-  0 1px var(--text-stroke),#fff, 
-  1px 0 var(--text-stroke),#fff, 
-  0 -1px var(--text-stroke),#fff;
+  -1px 0 var(--text-stroke), 
+  0 1px var(--text-stroke), 
+  1px 0 var(--text-stroke),
+  0 -1px var(--text-stroke);
   mix-blend-mode: hard-light;
   opacity: 50%;
   color: #000;
@@ -175,7 +175,7 @@ button:not(.card__icon-button) {
   background-color: transparent;
   color: white;
   background: white;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), sans-serif, fantasy;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   position: relative;
@@ -199,7 +199,7 @@ button:not(.card__icon-button)::before {
 }
 
 .button__text {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), sans-serif, fantasy;
   position: relative;
   z-index: 2;
   mix-blend-mode: difference;
@@ -214,7 +214,7 @@ button:not(.card__icon-button):hover::before {
 
 button:not(.card__icon-button):focus {
   outline: none;
-  box-shadow: 2px 2px 0 var(--accent-color), rgb(0 0 0);  
+  box-shadow: 2px 2px 0 var(--accent-color);  
 }
 
 button:not(.card__icon-button) svg {
@@ -242,7 +242,7 @@ outline: none;
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--accent-color), rgb(0 0 0);
+  border-color: var(--accent-color);
   transition: border-color 0.3s ease;
   margin-right: 7px;
 }
@@ -276,7 +276,7 @@ outline: none;
 
 .dialog_text {
   padding-left: 12px;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), sans-serif, fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
